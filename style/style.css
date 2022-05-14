@@ -23,6 +23,7 @@ main header nav{
     width: 100%;
 }
 main header{
+    min-height: 106px;
     background-color: #172d68;
     color: white;
     display: flex;
@@ -73,7 +74,6 @@ tbody tr{
     width: 100%;
     display: flex;
     flex-direction: row;
-   
     align-items: center;
     flex: 1;
 }
@@ -88,18 +88,25 @@ tbody td{
     flex: 1;
 }
 
-tbody td:nth-child(4){
+tbody td:nth-child(4), tbody tr:nth-child(5) td:nth-child(3){
     height: 100%;
     flex-grow: 2;
     background-color: #0b163b;
     margin: 0;
 }
-tbody td:hover{
-   
+tbody tr:nth-child(5) td:nth-child(3){
+  background-color: #172d68;
+  font-size: 20px;
+  flex-grow: 3;
+  border-top-left-radius: 15px;
+}
+tbody tr:nth-child(5) td:nth-child(3):active{
+  font-weight: bold;
+  font-size: 25px;
 }
 tbody td:active{
-    background-color:  #172d68;
-    border-radius: 5px;
+  font-weight: bold;
+  font-size: 20px;
 }
 
 /*toggle button*/
