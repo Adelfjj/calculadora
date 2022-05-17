@@ -1,11 +1,21 @@
+:root{
+  --main-color: #172d68;
+  --opr-color: #0b163b;
+  --num-color: #0b1946;
+  --font-color:white;
+}
 *{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
     font-family:Arial, Helvetica, sans-serif;
 }
+body{
+  background-image: linear-gradient(to top, #3283a3, #4d82be); 
+  height: 100vh;
+}
 main{
-    background-color: #172d68;
+    background-color: var(--main-color);
     margin: 10% auto;
     width: 200px;
     height: 300px;
@@ -24,8 +34,7 @@ main header nav{
 }
 main header{
     min-height: 106px;
-    background-color: #172d68;
-    color: white;
+    color: var(--font-color);
     display: flex;
     flex-direction: column;
     padding: 5px 12px;
@@ -37,7 +46,7 @@ main header button{
     cursor: pointer;
     background: none;
     border: none;
-    color: white;
+    color: var(--font-color);
 }
 main header section{
     background:none;
@@ -55,7 +64,7 @@ main header section p{
     font-size: 13px;
 }
 main section{
-    background-color: #0b1946;
+    background-color: var(--num-color);
     height: 100%;
     position: relative;
     overflow: hidden;
@@ -78,7 +87,7 @@ tbody tr{
     flex: 1;
 }
 tbody td{
-    color: white;
+    color: var(--font-color);
     cursor: pointer;
     margin-right: 3px;
     display: flex;
@@ -91,11 +100,11 @@ tbody td{
 tbody td:nth-child(4), tbody tr:nth-child(5) td:nth-child(3){
     height: 100%;
     flex-grow: 2;
-    background-color: #0b163b;
+    background-color: var(--opr-color);
     margin: 0;
 }
 tbody tr:nth-child(5) td:nth-child(3){
-  background-color: #172d68;
+  background-color: var(--main-color);
   font-size: 20px;
   flex-grow: 3;
   border-top-left-radius: 15px;
