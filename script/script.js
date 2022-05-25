@@ -2,7 +2,7 @@ let tdButton = document.querySelectorAll('td');
 let visor = document.getElementById('entradas');
 let total = document.getElementById('total');
 let cktoggle = document.getElementById('toggle');
-
+var contagem = 0;
 
 cktoggle.addEventListener('change', e =>{
 
@@ -20,30 +20,29 @@ cktoggle.addEventListener('change', e =>{
     }
 });
 
-const startUser = () =>{
+const EventoClick = () =>{
     for(const td of tdButton){
-        td.addEventListener('click',handleClick);
+        td.addEventListener('click',CLICADO);
     };
 };
 
-const handleClick = (e) =>{
-    INSERIR_VISOR(e.target);
+const CLICADO = (e) =>{
+    OPCOES(e.target);
 };
 
-const INSERIR_VISOR = (tdClick) =>{
+const OPCOES = (tdClick) =>{
     let numClick = tdClick.textContent;
     switch(numClick){
         case "\253":
             APAGAR();
             break;
-        case "c":
+        case "C":
             ZERAR();
             break;
         case "=":
             CALCULAR();
             break;
         default:
-         visor.textContent += numClick;
          ENUMERO(numClick);
     };
 };
@@ -51,6 +50,8 @@ const INSERIR_VISOR = (tdClick) =>{
 const ZERAR = () =>{
     visor.textContent = "";
     total.textContent = "0";
+    total.style.fontSize = "28px";
+    contagem = 0;
 };
 
 const APAGAR = () =>{
@@ -59,17 +60,29 @@ const APAGAR = () =>{
 };
 const CALCULAR = () => {
     if(visor.textContent){
-        let conta = eval(visor.textContent.replace("x","*"));
-        if(conta.toString().length > 11){
-            total.style.fontSize = "18px";
-        }
+        let conta = eval(visor.textContent);
+        ALTERARFONT(conta);
         total.textContent = conta;
     }
 };
 
+const ALTERARFONT = (conta) => {
+    conta.toString().length > 11 ? 
+        total.style.fontSize = "15px" :
+        total.style.fontSize = "28px"
+}
+
 const ENUMERO = (numClick) =>{
     if(isNaN(numClick)){
-        console.log(numClick);
+        if(isNaN(numClick) && contagem == 0){
+        contagem = 1;
+        visor.textContent += numClick;
+        }
+    }
+    else{
+        contagem = 0;
+        visor.textContent += numClick;
     }
 }
-startUser();
+
+EventoClick();
