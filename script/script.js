@@ -59,7 +59,7 @@ const APAGAR = () =>{
     document.getElementById('entradas').textContent = textVisor.substring(0,textVisor.length -1);
 };
 const CALCULAR = () => {
-    if(visor.textContent){
+    if(visor.textContent && contagem != 1){
         let conta = eval(visor.textContent);
         ALTERARFONT(conta);
         total.textContent = conta;
@@ -70,11 +70,11 @@ const ALTERARFONT = (conta) => {
     conta.toString().length > 11 ? 
         total.style.fontSize = "15px" :
         total.style.fontSize = "28px"
-}
+};
 
 const ENUMERO = (numClick) =>{
     if(isNaN(numClick)){
-        if(isNaN(numClick) && contagem == 0){
+        if(contagem == 0){
         contagem = 1;
         visor.textContent += numClick;
         }
@@ -83,6 +83,6 @@ const ENUMERO = (numClick) =>{
         contagem = 0;
         visor.textContent += numClick;
     }
-}
+};
 
 EventoClick();

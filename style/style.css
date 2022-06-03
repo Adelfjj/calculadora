@@ -11,12 +11,14 @@
     font-family:Arial, Helvetica, sans-serif;
 }
 body{
-  background-image: linear-gradient(to top, #3283a3, #4d82be); 
-  height: 100vh;
+    background-image: linear-gradient(to top, #3283a3, #4d82be); 
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 main{
     background-color: var(--main-color);
-    margin: 10% auto;
     width: 200px;
     height: 300px;
     border: 1px solid black;
