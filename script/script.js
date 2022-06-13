@@ -43,7 +43,7 @@ const OPCOES = (tdClick) =>{
             CALCULAR();
             break;
         default:
-         ENUMERO(numClick);
+         EXIBIR(numClick);
     };
 };
 
@@ -72,7 +72,7 @@ const ALTERARFONT = (conta) => {
         total.style.fontSize = "28px"
 };
 
-const ENUMERO = (numClick) =>{
+const EXIBIR = (numClick) =>{
     if(isNaN(numClick)){
         if(contagem == 0){
         contagem = 1;
